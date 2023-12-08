@@ -45,6 +45,7 @@ info_works.txt
     bool register(string id,string password)
     ```
 * 顾客类（继承自游客）：
+
 变量：用户id，密码，用户名，权限
 1. 查询图书：
     ```
@@ -53,30 +54,30 @@ info_works.txt
     bool query(string author)
     bool query(string keyword)
     ```
-  2. 购买图书：
+2. 购买图书：
     ```
     bool buy(string id,int num)
     ```
-  3. 注销账户：
+3. 注销账户：
     ```
     bool logout();
     ```
-  4. 修改密码：
+4. 修改密码：
     ```
     bool change_pass(string id,string cur_pass,string new_pass)
     bool change_pass(string id,string new_pass)
     ```
 * 销售人员类（继承自顾客）：
 
-  1. 图书进货：
+1. 图书进货：
     ```
     bool import(int num,double cost)
     ```
-  2. 选择图书：
+2. 选择图书：
     ```
     void select(string ISBN)
     ```
-  3. 图书信息修改：
+3. 图书信息修改：
     ```
     bool modify(string ISBN)
     bool modify(string name)
@@ -84,34 +85,34 @@ info_works.txt
     bool modify(string* keyword)
     bool modify(double price)
     ```
-  4.  创建账户：
+4.  创建账户：
     ```
     bool useradd(string id,string password,int pr,string name)
     ```
 
 * 店长类（继承自销售）：
 
-  1. 财务记录查询：
-    ```
-    bool ask_finance()
-    bool ask_finance(int num)
-    ```
-  2. 生成财务记录报告：
-    ```
-    void report_finance()
-    ```
-  3. 生成全体员工工作情况报告指令：
-    ```
-    void report_employee()
-    ```
-  5. 生成日志：
-    ```
-    void log()
-    ```
-  6. 删除账户：
-    ```
-    bool delete()
-    ```
+1. 财务记录查询：
+  ```
+  bool ask_finance()
+  bool ask_finance(int num)
+  ```
+2. 生成财务记录报告：
+  ```
+  void report_finance()
+  ```
+3. 生成全体员工工作情况报告指令：
+  ```
+  void report_employee()
+  ```
+5. 生成日志：
+  ```
+  void log()
+  ```
+6. 删除账户：
+  ```
+  bool delete()
+  ```
 
 ## 文件存储说明
 
