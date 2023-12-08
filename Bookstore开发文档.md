@@ -8,16 +8,28 @@
 
 ## 代码文件结构
 需求分析文档.md
+
 总体设计文档.md
+
 Bookstore开发文档.md
+
 \code
+
 visitor.h
+
 customer.h
+
 salesman.h
+
 owner.h
+
+
 \information
+
 info_book.txt
+
 info_user.txt
+
 info_works.txt
 
 ## 各个类接口及成员说明
