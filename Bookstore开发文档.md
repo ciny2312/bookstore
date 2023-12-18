@@ -13,7 +13,7 @@
 
 Bookstore开发文档.md
 
-\code
+/code
 
 visitor.h
 
@@ -24,13 +24,13 @@ salesman.h
 owner.h
 
 
-\information
+/information
 
-info_book.txt
+info_book.db
 
-info_user.txt
+info_user.db
 
-info_works.txt
+info_works.db
 
 ## 各个类接口及成员说明
 
