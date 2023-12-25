@@ -154,6 +154,70 @@ $\qquad$ workers.db
   ```
   bool delete()
   ```
+* 图书类
+```
+class books{
+  String ISBN,name,author;
+  String keys[65];
+  int k_num,num,pos;
+  double price;
+  
+  public:
+  books(String _ISBN=String()):ISBN(_ISBN);
+  bool operator<(const books x) const ;
+  bool operator == (const books x) ;
+  bool operator <= (const books x) const;
+  bool enough(int _num);
+  bool is_index(String _ISBN);
+  int get_pos();
+  String get_index();
+  void print();
+  void add(int _num);
+  double sell(int _num);
+  void change_isbn(String _name);
+  void change_name(String _name);
+  void change_author(String _author);
+  void change_key(String *_keys,int _num);
+  void change_price(double _price);
+  void change_pos(int _pos);
+  void updata_in_steady(books cur);
+}
+```
+* 文件读写类
+```
+
+template <class T, class T_block, class T_summary>
+class files {
+  std::string filename, filesummary;
+  std::fstream f_block, f_summary;
+
+public:
+  files(std::string _filename) {
+    filename = _filename + ".db";
+    filesummary = _filename + "_summary.db";
+  }
+
+  void updata(T cur);
+  std::vector<int> show_all();
+  std::vector<int> show(String index);
+  T get(String index) ;
+  bool query(String index);
+  void divide(int rk, T_block x) ;
+  void merge(int rk, T_block x, T_block y);
+  void del_in_block(int rk, T cur) ;
+  void del(T cur);
+  void insert_in_block(int rk, T cur);
+  void insert(T cur);
+};
+```
+* 书名（及其块状链表）类
+
+* 作者（及其块状链表）类
+
+* 关键字（及其块状链表）类
+
+* 财务（及其块状链表）类
+
 
 ## 文件存储说明
 * 用户数据库：
