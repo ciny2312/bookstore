@@ -81,8 +81,8 @@ class finance{
   public:
   void insert(double money){
     std::fstream f,f_summary;
-    f.open("../information/info_finance.db",std::fstream::in|std::fstream::out|std::fstream::binary);
-    f_summary.open("../information/info_finance_summary.db",std::fstream::in|std::fstream::out|std::fstream::binary);
+    f.open("info_finance.db",std::fstream::in|std::fstream::out|std::fstream::binary);
+    f_summary.open("info_finance_summary.db",std::fstream::in|std::fstream::out|std::fstream::binary);
     finance_block b;
     f.seekg(sizeof(finance_block),std::ios::end);
     f.read(reinterpret_cast<char*>(&b),sizeof(finance_block));
@@ -119,8 +119,8 @@ class finance{
       return true;
     }
     std::fstream f,f_summary;
-    f.open("../information/info_finance.db",std::fstream::in|std::fstream::out|std::fstream::binary);
-    f_summary.open("../information/info_finance_summary.db",std::fstream::in|std::fstream::out|std::fstream::binary);
+    f.open("info_finance.db",std::fstream::in|std::fstream::out|std::fstream::binary);
+    f_summary.open("info_finance_summary.db",std::fstream::in|std::fstream::out|std::fstream::binary);
     f_summary.seekg(0);int num;
     f_summary.read(reinterpret_cast<char*>(&num),sizeof(int));
     if(num<_num){

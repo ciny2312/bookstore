@@ -22,7 +22,11 @@ $\qquad\qquad$ 2074.cpp
 
 $\qquad$ users.h
 
+$\qquad$ users.cpp
+
 $\qquad$ books.h
+
+$\qquad$ books.cpp
 
 $\qquad$ filework.h
 
@@ -67,8 +71,9 @@ $\qquad$ workers.db
 
 ## 各个类接口及成员说明
 
-* 游客类：
-
+* 用户类：
+变量：用户id，密码，用户名，权限
+> 游客
   1. 账户注册：
     ```
     bool register(String id,String password,String name)
@@ -78,9 +83,8 @@ $\qquad$ workers.db
     bool su(String id)
     bool su(String id,String password)
     ```
-* 顾客类（继承自游客）：
+> 顾客：
 
-变量：用户id，密码，用户名，权限
 1. 查询图书：
     ```
     bool show(int ty,String index)
@@ -103,7 +107,7 @@ $\qquad$ workers.db
     bool change_pass(String id,String cur_pass,String new_pass)
     bool change_pass(String id,String new_pass)
     ```
-* 销售人员类（继承自顾客）：
+> 销售人员：
 
 1.  创建账户：
     ```
@@ -128,7 +132,7 @@ $\qquad$ workers.db
     bool import(int num,double cost)
     ```
 
-* 店长类（继承自销售）：
+> 店长：
 
 1. 财务记录查询：
   ```
@@ -156,22 +160,21 @@ $\qquad$ workers.db
 按用户id的字典序记录每个用户的信息，包括：用户id，密码，用户名，账户权限。
 * 图书数据库：
 按ISBN字典序记录每本书的信息，包括：ISBN 号（string）、书名（string）、作者（string）、关键字（string[]）、库存量（int）、单价（double）
+* 图书总表
 * 书名表：
-按书名的字典序排列，记录该书在图书数据库中的位置
+按书名的字典序排列，记录该书在图书总表中的位置
 * 作者表：
-按书名的字典序排列，记录拥有该作者的所有图书在图书数据库中的位置
+按书名的字典序排列，记录拥有该作者的所有图书在图书总表中的位置
 * 书名表：
-按书名的字典序排列，记录拥有该书名的所有图书在图书数据库中的位置
+按书名的字典序排列，记录拥有该书名的所有图书在图书总表中的位置
 * 关键字表
-按关键字的字典序排列，记录拥有该关键字的所有图书在图书数据库中的位置
+按关键字的字典序排列，记录拥有该关键字的所有图书在图书总表中的位置
 * 工作日志：
 按时间顺序记录系统整体工作
 * 员工工作情况表：
 按时间顺序记录员工工作情况
 * 财务报表：
 按时间顺序记录系统的收入支出
-* 数据库大小
-记录三个非负整数：用户数量，图书数量，交易数量
 ## 其他补充
 
 
