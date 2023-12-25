@@ -153,11 +153,11 @@ bool users::select(String ISBN, int &book_pos) {
 }
 bool users::have_pri(int p) { return pri >= p; }
 bool users::modify(int ty, String index, books b) {
-    std::cout<<"HERE1"<<'\n';
+  //  std::cout<<"HERE1"<<'\n';
   if (ty == 0) {
     if (b.is_index(index))
       return false;
-    std::cout<<"HERE2"<<'\n';
+  //  std::cout<<"HERE2"<<'\n';
     b.change_isbn(index);
   } else if (ty == 1) {
     b.change_name(index);
