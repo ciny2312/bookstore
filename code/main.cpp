@@ -60,7 +60,7 @@ bool is_one_key(string s){
 }
 string get(string s,int l,int r){
   string ans;
-  if(s.length()>=r) return ans;
+  if(s.length()<=r) return ans;
   for(int i=l;i<=r;i++){
     ans+=s[i];
   }
@@ -136,6 +136,7 @@ void debug(){
   return ;
 }
 int main(){
+//  freopen("../bookstore-testcases/basic/testcase4.in","r",stdin);
 //  freopen("test.out","w",stdout);
   fstream file;
   file.open("../information/info_users.db",std::fstream::in|std::fstream::out|std::fstream::binary);
@@ -178,6 +179,7 @@ int main(){
     file.close();
 
     file.open("../information/info_steady.db",std::ios::out);
+    file.write(reinterpret_cast<char*>(&num),sizeof(int));
     file.close();
     file.open("../information/tot_work.db",std::ios::out);
     file.close();
@@ -202,6 +204,7 @@ int main(){
     if(cin.eof()){
       break;
     }
+  //  cout<<s<<endl;
     int p=0;
     string word=getword(s,p);
     if(word=="su"){
@@ -513,9 +516,10 @@ int main(){
         printf("Invalid\n");
         continue;
       }
+    //  cout<<s<<endl;
       books b;
       file.open("../information/info_steady.db",fstream::in|fstream::out|fstream::binary);
-      file.seekg(sizeof(books)*(lg.back().book_pos-1));
+      file.seekg(sizeof(int)+sizeof(books)*(lg.back().book_pos-1));
       file.read(reinterpret_cast<char*>(&b),sizeof(books));
       file.close();
 
@@ -586,21 +590,25 @@ int main(){
         printf("Invalid\n");
         continue;
       }
+    //  cout<<s<<endl;
       p=0;
       word=getword(s,p);
       word=getword(s,p);
       while(word!=""){
         if(get(word,0,5)=="-ISBN="){
           string isbn=get(word,6,word.length()-1);
-          cur.modify(1,isbn,b);
+        //  cout<<s<<"ASA"<<endl;
+        //  cout<<isbn<<'\n';
+        //  cout<<b.get_index().into_string()<<'\n';
+          cur.modify(0,isbn,b);
         }
         else if(get(word,0,5)=="-name="){
           string name=get(word,7,word.length()-2);
-          cur.modify(2,name,b);
+          cur.modify(1,name,b);
         }
         else if(get(word,0,7)=="-author="){
           string author=get(word,9,word.length()-2);
-          cur.modify(3,author,b);
+          cur.modify(2,author,b);
         }
         else if(get(word,0,8)=="-keyword="){
           string keys=get(word,10,word.length()-2);

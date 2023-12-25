@@ -98,10 +98,11 @@ bool users::change_pass(String _id, String cur_pass, String new_pass) {
     return 0;
   if (!f.query(_id))
     return false;
-  if (password != cur_pass)
+  users cur=f.get(_id);
+  if (cur.password != cur_pass)
     return false;
-  password = new_pass;
-  f.updata(*this);
+  cur.password = new_pass;
+  f.updata(cur);
   return true;
 }
 bool users::change_pass(String _id, String new_pass) {
@@ -110,8 +111,9 @@ bool users::change_pass(String _id, String new_pass) {
     return false;
   if (!f.query(_id))
     return false;
-  password = new_pass;
-  f.updata(*this);
+  users cur=f.get(_id);
+  cur.password = new_pass;
+  f.updata(cur);
   return true;
 }
 bool users::useradd(String _id, String _password, int _pri, String _name) {
@@ -139,6 +141,8 @@ bool users::select(String ISBN, int &book_pos) {
     f_steady.read(reinterpret_cast<char*>(&num),sizeof(int));
     nw.change_pos(++num);
     book_pos=num;
+    f_steady.seekp(0);
+    f_steady.write(reinterpret_cast<char*>(&num),sizeof(int));
     f_steady.seekp(std::ios::end);
     f_steady.write(reinterpret_cast<char*>(&nw),sizeof(books));
     f.insert(nw);
@@ -149,9 +153,11 @@ bool users::select(String ISBN, int &book_pos) {
 }
 bool users::have_pri(int p) { return pri >= p; }
 bool users::modify(int ty, String index, books b) {
+    std::cout<<"HERE1"<<'\n';
   if (ty == 0) {
     if (b.is_index(index))
       return false;
+    std::cout<<"HERE2"<<'\n';
     b.change_isbn(index);
   } else if (ty == 1) {
     b.change_name(index);

@@ -424,9 +424,11 @@ public:
     T_summary all, nxt_all;
     f_summary.seekg(sizeof(int));
     f_summary.read(reinterpret_cast<char *>(&all), sizeof(T_summary));
-
+    
+        std::cout<<all.pos<<'\n';
     while (true) {
       if (all.nxt == 0) {
+        std::cout<<all.pos<<'\n';
         del_in_block(all.pos, cur);
         break;
       }
