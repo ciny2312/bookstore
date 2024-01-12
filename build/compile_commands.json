@@ -1,0 +1,17 @@
+[
+{
+  "directory": "/home/ciny2312/bighomework/bookstore/build",
+  "command": "/usr/bin/g++    -Ofast -g -std=gnu++20 -o CMakeFiles/code.dir/src/users.cpp.o -c /home/ciny2312/bighomework/bookstore/src/users.cpp",
+  "file": "/home/ciny2312/bighomework/bookstore/src/users.cpp"
+},
+{
+  "directory": "/home/ciny2312/bighomework/bookstore/build",
+  "command": "/usr/bin/g++    -Ofast -g -std=gnu++20 -o CMakeFiles/code.dir/src/books.cpp.o -c /home/ciny2312/bighomework/bookstore/src/books.cpp",
+  "file": "/home/ciny2312/bighomework/bookstore/src/books.cpp"
+},
+{
+  "directory": "/home/ciny2312/bighomework/bookstore/build",
+  "command": "/usr/bin/g++    -Ofast -g -std=gnu++20 -o CMakeFiles/code.dir/src/main.cpp.o -c /home/ciny2312/bighomework/bookstore/src/main.cpp",
+  "file": "/home/ciny2312/bighomework/bookstore/src/main.cpp"
+}
+]

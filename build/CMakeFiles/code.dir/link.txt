@@ -1,0 +1,1 @@
+/usr/bin/g++  -Ofast -g CMakeFiles/code.dir/src/users.cpp.o CMakeFiles/code.dir/src/books.cpp.o CMakeFiles/code.dir/src/main.cpp.o -o code 

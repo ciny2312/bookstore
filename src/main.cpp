@@ -139,59 +139,59 @@ int main(){
 //  freopen("bookstore-testcases/basic/testcase4.in","r",stdin);
 //  freopen("test.out","w",stdout);
   fstream file;
-  file.open("info_users.db",std::fstream::in|std::fstream::out|std::fstream::binary);
+  file.open("information/info_users.db",std::fstream::in|std::fstream::out|std::fstream::binary);
   if(!file.is_open()){
     int num=0;
-    file.open("info_users.db",std::ios::out);
+    file.open("information/info_users.db",std::ios::out);
     file.close();
-    file.open("info_users_summary.db",std::ios::out);
+    file.open("information/info_users_summary.db",std::ios::out);
     file.write(reinterpret_cast<char*>(&num),sizeof(int));
     file.close();
 
-    file.open("info_books.db",std::ios::out);
+    file.open("information/info_books.db",std::ios::out);
     file.close();
-    file.open("info_books_summary.db",std::ios::out);
+    file.open("information/info_books_summary.db",std::ios::out);
     file.write(reinterpret_cast<char*>(&num),sizeof(int));
     file.close();
 
-    file.open("info_finance.db",std::ios::out);
+    file.open("information/info_finance.db",std::ios::out);
     file.close();
-    file.open("info_finance_summary.db",std::ios::out);
+    file.open("information/info_finance_summary.db",std::ios::out);
     file.write(reinterpret_cast<char*>(&num),sizeof(int));
     file.close();
 
-    file.open("book_name.db",std::ios::out);
+    file.open("information/book_name.db",std::ios::out);
     file.close();
-    file.open("book_name_summary.db",std::ios::out);
+    file.open("information/book_name_summary.db",std::ios::out);
     file.write(reinterpret_cast<char*>(&num),sizeof(int));
     file.close();
 
-    file.open("book_author.db",std::ios::out);
+    file.open("information/book_author.db",std::ios::out);
     file.close();
-    file.open("book_author_summary.db",std::ios::out);
+    file.open("information/book_author_summary.db",std::ios::out);
     file.write(reinterpret_cast<char*>(&num),sizeof(int));
     file.close();
 
-    file.open("book_key.db",std::ios::out);
+    file.open("information/book_key.db",std::ios::out);
     file.close();
-    file.open("book_key_summary.db",std::ios::out);
+    file.open("information/book_key_summary.db",std::ios::out);
     file.write(reinterpret_cast<char*>(&num),sizeof(int));
     file.close();
 
-    file.open("info_steady.db",std::ios::out);
+    file.open("information/info_steady.db",std::ios::out);
     file.write(reinterpret_cast<char*>(&num),sizeof(int));
     file.close();
-    file.open("tot_work.db",std::ios::out);
+    file.open("information/tot_work.db",std::ios::out);
     file.close();
-    file.open("workers.db",std::ios::out);
+    file.open("information/workers.db",std::ios::out);
     file.close();
-    file.open("finance.db",std::ios::out);
+    file.open("information/finance.db",std::ios::out);
     file.close();
 
     
     string name="root",password="sjtu";
     users root(name,password,name,7);
-    files <users,users_block,users_summary>f("info_users");
+    files <users,users_block,users_summary>f("information/info_users");
     f.insert(root);
 
   }
@@ -518,7 +518,7 @@ int main(){
       }
     //  cout<<s<<endl;
       books b;
-      file.open("info_steady.db",fstream::in|fstream::out|fstream::binary);
+      file.open("information/info_steady.db",fstream::in|fstream::out|fstream::binary);
       file.seekg(sizeof(int)+sizeof(books)*(lg.back().book_pos-1));
       file.read(reinterpret_cast<char*>(&b),sizeof(books));
       file.close();
@@ -636,7 +636,7 @@ int main(){
         continue;
       }
       books b;
-      file.open("info_book.db",fstream::in|fstream::out|fstream::binary);
+      file.open("information/info_book.db",fstream::in|fstream::out|fstream::binary);
       file.seekg(sizeof(books)*(lg.back().book_pos-1));
       file.read(reinterpret_cast<char*>(&b),sizeof(books));
       file.close();

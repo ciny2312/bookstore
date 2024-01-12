@@ -1,0 +1,3 @@
+/home/ciny2312/bighomework/bookstore/build/CMakeFiles/code.dir
+/home/ciny2312/bighomework/bookstore/build/CMakeFiles/edit_cache.dir
+/home/ciny2312/bighomework/bookstore/build/CMakeFiles/rebuild_cache.dir

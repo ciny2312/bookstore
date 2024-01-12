@@ -1,0 +1,29 @@
+su root
+root add a new user worker0 password: worker0_password name= LouisClark
+root logout
+su worker0
+worker0 add a new user user0 password: user0_password name= SusanRyan
+worker0 logout
+register user1 password= user1_password name= DavidGalvan
+su user0
+user0 logout
+su user1
+user1 logout
+su root
+root add a new user worker1 password: worker1_password name= ErinRodriguez
+root add a new user user2 password: user2_password name= DavidRobinson
+root logout
+register user3 password= user3_password name= LawrenceMorris
+su user2
+user2 logout
+su user3
+user3 logout
+su worker1
+worker1 add a new user user4 password: user4_password name= YeseniaBurns
+worker1 logout
+register user5 password= user5_password name= KathleenJackson
+su user4
+user4 logout
+su user5
+user5 logout
+su root

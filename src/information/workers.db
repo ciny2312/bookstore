@@ -1,0 +1,5 @@
+root add a new user worker0 password: worker0_password name= LouisClark
+worker0 add a new user user0 password: user0_password name= SusanRyan
+root add a new user worker1 password: worker1_password name= ErinRodriguez
+root add a new user user2 password: user2_password name= DavidRobinson
+worker1 add a new user user4 password: user4_password name= YeseniaBurns
